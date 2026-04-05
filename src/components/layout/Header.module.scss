@@ -18,10 +18,16 @@
 }
 
 .name {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text);
-  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .nav {
@@ -37,4 +43,8 @@
   &:hover {
     color: var(--color-text);
   }
+}
+
+.muted {
+  opacity: 0.5;
 }
