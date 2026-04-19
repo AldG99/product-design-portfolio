@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FiArrowLeft } from 'react-icons/fi'
 import { useSEO } from '../../hooks/useSEO'
 import styles from './NotFound.module.scss'
 
@@ -14,7 +15,8 @@ export default function NotFound() {
           La página que buscas no existe o fue movida.
         </p>
         <Link to="/" className={styles.link}>
-          ← Volver al inicio
+          <FiArrowLeft size={14} />
+          Volver al inicio
         </Link>
       </div>
     </main>

@@ -1,10 +1,9 @@
+// Swiss: cards live inside a black-border grid. No individual top border needed.
 .card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  color: inherit;
-  border-top: 1px solid var(--color-border);
-  padding-top: 32px;
+  background-color: var(--color-bg);
+  padding: 0;
 }
 
 .cover {
@@ -21,6 +20,7 @@
 }
 
 .info {
+  padding: 20px 24px 28px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -30,34 +30,68 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 4px;
 }
 
+// Swiss: bold uppercase category — same font, weight does the work
 .category {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .year {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
+  font-weight: 400;
   color: var(--color-secondary);
 }
 
 .title {
+  font-family: var(--font-primary);
   font-size: var(--text-xl);
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   color: var(--color-text);
+  transition: color var(--transition);
 
   @media (max-width: 768px) {
     font-size: var(--text-lg);
   }
 }
 
+@media (hover: hover) {
+  .card:hover .title {
+    color: var(--color-accent);
+  }
+}
+
 .description {
+  font-family: var(--font-primary);
   font-size: var(--text-sm);
+  font-weight: 400;
   color: var(--color-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-border-lt);
+  padding: 2px 8px;
 }

@@ -12,13 +12,20 @@
 }
 
 .back {
-  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-secondary);
   transition: color var(--transition);
   align-self: flex-start;
 
   &:hover {
-    color: var(--color-text);
+    color: var(--color-accent);
   }
 }
 
@@ -32,29 +39,33 @@
 
 .meta {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   align-items: center;
 }
 
 .category {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .year {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
+  font-weight: 400;
   color: var(--color-secondary);
 }
 
 .title {
+  font-family: var(--font-primary);
   font-size: var(--text-3xl);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-text);
-  line-height: 1.05;
+  line-height: 1.0;
 
   @media (max-width: 768px) {
     font-size: var(--text-2xl);
@@ -62,10 +73,12 @@
 }
 
 .description {
+  font-family: var(--font-primary);
   font-size: var(--text-lg);
+  font-weight: 400;
   color: var(--color-secondary);
   max-width: 600px;
-  line-height: 1.5;
+  line-height: 1.55;
 
   @media (max-width: 768px) {
     font-size: var(--text-base);
@@ -79,8 +92,12 @@
 }
 
 .tag {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
-  color: var(--color-secondary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
   border: 1px solid var(--color-border);
   padding: 4px 10px;
 }
@@ -108,7 +125,7 @@
 .overview {
   display: flex;
   gap: 48px;
-  padding: 32px 0;
+  padding: 28px 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 
@@ -121,20 +138,23 @@
 .overviewItem {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .overviewLabel {
+  font-family: var(--font-primary);
   font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .overviewValue {
+  font-family: var(--font-primary);
   font-size: var(--text-sm);
-  color: var(--color-text);
+  font-weight: 400;
+  color: var(--color-secondary);
 }
 
 .section {
@@ -144,16 +164,77 @@
 }
 
 .sectionTitle {
+  font-family: var(--font-primary);
   font-size: var(--text-lg);
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--color-text);
 }
 
+.sectionEmpty {
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-border-lt);
+  font-style: italic;
+}
+
 .sectionText {
+  font-family: var(--font-primary);
   font-size: var(--text-base);
+  font-weight: 400;
   line-height: 1.7;
   color: var(--color-secondary);
+}
+
+// Single image
+.figure {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// Gallery grid — 2 columns
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.galleryItem {
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// Metrics grid — Swiss: same 1px black seam pattern
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.metricsItem {
+  background-color: var(--color-bg);
+  padding: 20px 24px;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-secondary);
+  line-height: 1.5;
 }
 
 .notFound {
@@ -165,7 +246,11 @@
   gap: 16px;
 
   a {
-    font-size: var(--text-sm);
+    font-family: var(--font-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--color-accent);
   }
 }

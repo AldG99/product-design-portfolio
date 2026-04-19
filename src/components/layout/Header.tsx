@@ -1,21 +1,31 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/logo.svg'
 import styles from './Header.module.scss'
 
 const navLinks = [
-  { label: 'Trabajo', href: '/#work' },
-  { label: 'Sobre mí', href: '/#about' },
-  { label: 'Contacto', href: '/#contact' },
+  { label: 'Trabajo', hash: 'work' },
+  { label: 'Sobre mí', hash: 'about' },
+  { label: 'Contacto', hash: 'contact' },
 ]
 
 export default function Header() {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const isHome = pathname === '/'
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (isHome) {
       e.preventDefault()
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault()
+    if (isHome) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate(`/#${hash}`)
     }
   }
 
@@ -26,11 +36,12 @@ export default function Header() {
           <img src={logo} alt="Alfredo García" className={styles.logo} draggable={false} />
         </Link>
         <nav className={styles.nav}>
-          {navLinks.map(({ label, href }) => (
+          {navLinks.map(({ label, hash }) => (
             <a
               key={label}
-              href={href}
+              href={`/#${hash}`}
               className={`${styles.link} ${!isHome ? styles.muted : ''}`}
+              onClick={(e) => handleNavClick(e, hash)}
             >
               {label}
             </a>

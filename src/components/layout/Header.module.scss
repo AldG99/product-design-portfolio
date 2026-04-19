@@ -1,9 +1,9 @@
+// Swiss: flat header, black rule — no blur, no transparency
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
+  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .logo {
-  height: 32px;
+  height: 28px;
   width: auto;
   user-select: none;
   -webkit-user-drag: none;
@@ -35,16 +35,21 @@
   gap: 32px;
 }
 
+// Swiss nav: single font, regular weight, uppercase with tracking
 .link {
-  font-size: var(--text-sm);
-  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
   transition: color var(--transition);
 
   &:hover {
-    color: var(--color-text);
+    color: var(--color-accent);
   }
 }
 
 .muted {
-  opacity: 0.5;
+  opacity: 0.4;
 }
