@@ -5,10 +5,17 @@ import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import CaseStudy from './pages/CaseStudy'
 import NotFound from './pages/NotFound'
+import { useScrollToTop } from './hooks/useScrollToTop'
+
+function ScrollToTop() {
+  useScrollToTop()
+  return null
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
