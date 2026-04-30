@@ -17,7 +17,7 @@ export const projects: Project[] = [
   },
   {
     id: '2',
-    slug: 'sportcampus',
+    slug: 'sport-campus',
     title: 'SportCampus',
     description:
       'App móvil para deportes universitarios, con equipos, estadísticas y eventos multimedia, pensada para una experiencia clara y funcional.',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     period: 'Mayo — Julio 2025',
     endDate: '2025-07',
     cover: new URL(
-      '../assets/images/covers/cover-sportcampus.jpg',
+      '../assets/images/covers/cover-sport-campus.jpg',
       import.meta.url
     ).href,
     tags: ['React Native', 'UX/UI', 'Mobile'],
