@@ -4,6 +4,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import CaseStudy from './pages/CaseStudy'
+import Blog from './pages/Blog'
 import NotFound from './pages/NotFound'
 import { useScrollToTop } from './hooks/useScrollToTop'
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/:slug" element={<CaseStudy />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
