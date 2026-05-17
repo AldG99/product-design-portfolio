@@ -39,7 +39,7 @@ export default function About() {
             creando wireframes, prototipos y código para experiencias digitales
             intuitivas y funcionales.
           </p>
-          <p className={`${styles.bio} fade-up fade-up-delay-3 ${inView ? 'in-view' : ''}`}>
+          <p className={`${styles.bio} fade-up fade-up-delay-4 ${inView ? 'in-view' : ''}`}>
             Estudié en la{' '}
             <a href="https://www.cs.buap.mx/" target="_blank" rel="noopener noreferrer" className={styles.link}>
               Facultad de Ciencias de la Computación de la Benemérita Universidad Autónoma de Puebla
@@ -53,10 +53,10 @@ export default function About() {
             tecnología, enfocándome en diseñar soluciones que realmente respondan
             a las necesidades de los usuarios.
           </p>
-          <p className={`${styles.bio} fade-up fade-up-delay-4 ${inView ? 'in-view' : ''}`}>
+          <p className={`${styles.bio} fade-up fade-up-delay-5 ${inView ? 'in-view' : ''}`}>
             Gracias por tomarse el tiempo para visitar mi sitio.
           </p>
-          <blockquote className={`${styles.quote} fade-up fade-up-delay-4 ${inView ? 'in-view' : ''}`}>
+          <blockquote className={`${styles.quote} fade-up fade-up-delay-5 ${inView ? 'in-view' : ''}`}>
             <p>"One of the stated goals for the Macintosh project was that the computer
             should be friendly and appeal to non-technical users."</p>
             <cite>— Susan Kare</cite>
